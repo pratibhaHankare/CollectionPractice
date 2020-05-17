@@ -6,45 +6,21 @@ using System.Threading.Tasks;
 
 namespace CollectionPractice
 {
-    class Program<T>
-    {
-        public void AddingNumbers(T value1, T value2)
-        {
-            dynamic d1 = value1;
-            dynamic d2 = value2;
-            Console.WriteLine(d1+d2);
-        }
-        public void subtractingNumbers(T value1, T value2)
-        {
-            dynamic d1 = value1;
-            dynamic d2 = value2;
-            Console.WriteLine(d1 - d2);
-        }
-        public void multiplicationNumbers(T value1, T value2)
-        {
-            dynamic d1 = value1;
-            dynamic d2 = value2;
-            Console.WriteLine(d1 * d2);
-        }
-        public void dividenNumbers(T value1, T value2)
-        {
-            dynamic d1 = value1;
-            dynamic d2 = value2;
-            Console.WriteLine(d1/d2);
-        }
-    }
-
-    class Test
+    class Program
     {
         static void Main(string[] args)
         {
-            Program<int> obj = new Program<int>();
-            obj.AddingNumbers(10,10);
-            obj.subtractingNumbers(40, 12);
-            obj.multiplicationNumbers(8, 8);
-            obj.dividenNumbers(10, 5);
+            Dictionary<string,object> dt = new Dictionary<string, object>();
+            dt.Add("eId",1);
+            dt.Add("ename","pratibha");
+            dt.Add("mgnrId",1111);
+            dt.Add("eemail","e@something.com");
+            dt.Add("elocation","pune");
+            dt.Add("degination","TA");
+            foreach(string key in dt.Keys){
+                Console.WriteLine(key +" : "+dt[key]);
+            }
             Console.ReadLine();
-
         }
 
     }
