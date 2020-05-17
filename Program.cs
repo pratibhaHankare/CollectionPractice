@@ -6,22 +6,46 @@ using System.Threading.Tasks;
 
 namespace CollectionPractice
 {
-    class Program
+    class Program<T>
+    {
+        public void AddingNumbers(T value1, T value2)
+        {
+            dynamic d1 = value1;
+            dynamic d2 = value2;
+            Console.WriteLine(d1+d2);
+        }
+        public void subtractingNumbers(T value1, T value2)
+        {
+            dynamic d1 = value1;
+            dynamic d2 = value2;
+            Console.WriteLine(d1 - d2);
+        }
+        public void multiplicationNumbers(T value1, T value2)
+        {
+            dynamic d1 = value1;
+            dynamic d2 = value2;
+            Console.WriteLine(d1 * d2);
+        }
+        public void dividenNumbers(T value1, T value2)
+        {
+            dynamic d1 = value1;
+            dynamic d2 = value2;
+            Console.WriteLine(d1/d2);
+        }
+    }
+
+    class Test
     {
         static void Main(string[] args)
         {
-            Program obj = new Program();
-            bool result = obj.comapre<float>(22.6f,22.7f);
-            Console.WriteLine(result);
+            Program<int> obj = new Program<int>();
+            obj.AddingNumbers(10,10);
+            obj.subtractingNumbers(40, 12);
+            obj.multiplicationNumbers(8, 8);
+            obj.dividenNumbers(10, 5);
             Console.ReadLine();
 
         }
 
-        public bool comapre<T>(T value1,T value2)
-        {
-            if (value1.Equals(value2))
-                return true;
-            return false;
-        }
     }
 }
