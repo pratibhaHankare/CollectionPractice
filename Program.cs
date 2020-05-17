@@ -10,18 +10,60 @@ namespace CollectionPractice
     {
         static void Main(string[] args)
         {
-            Dictionary<string,object> dt = new Dictionary<string, object>();
-            dt.Add("eId",1);
-            dt.Add("ename","pratibha");
-            dt.Add("mgnrId",1111);
-            dt.Add("eemail","e@something.com");
-            dt.Add("elocation","pune");
-            dt.Add("degination","TA");
-            foreach(string key in dt.Keys){
-                Console.WriteLine(key +" : "+dt[key]);
-            }
+            testCustomer test = new testCustomer();
+            test.custInfoadding();
             Console.ReadLine();
         }
+    }
+
+    class Customers
+    {
+        public int custId { set; get; }
+        public string custName { set; get; }
+        public string custEmail { set; get; }
+        public double custBal { set; get; }
+        public string custLocation { set; get; }
+    }
+
+    class testCustomer
+    {
+        public void custInfoadding()
+        {
+            Customers c1 = new Customers
+            {
+                custId = 1,
+                custName = "abc",
+                custEmail = "a@something.com",
+                custBal = 1000.56,
+                custLocation = "Pune"
+            };
+            Customers c2 = new Customers
+            {
+                custId = 2,
+                custName = "abc",
+                custEmail = "a@something.com",
+                custBal = 1000.56,
+                custLocation = "Pune"
+            };
+            Customers c3 = new Customers
+            {
+                custId = 3,
+                custName = "abc",
+                custEmail = "c@something.com",
+                custBal = 1090.56,
+                custLocation = "Pune"
+            };
+            List<Customers> Customer = new List<Customers>();
+            Customer.Add(c1);
+            Customer.Add(c2);
+            Customer.Add(c3);
+            // printing values
+            foreach (Customers cust in Customer)
+            {
+                Console.WriteLine(cust.custId+" "+cust.custName + " " +cust.custEmail + " " +cust.custLocation + " " +cust.custBal);
+            }
+        }
+
 
     }
 }
